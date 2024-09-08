@@ -7,6 +7,7 @@ This project contains Python scripts to calculate the volume of a heap based on 
 - `VolumeCalculator1.py`: Contains the logic for calculating volumes from a DEM using a shapefile mask.
 - `test.py`: Script to run the volume calculation and test the functionality.
 - `VolumeCalculator.py`: Whole script in one file.
+- `main.py`: Processing tool creation in QGIS.
 - `README.md`: This file.
 
 ## Requirements
