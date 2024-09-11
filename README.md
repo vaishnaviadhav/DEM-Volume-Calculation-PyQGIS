@@ -64,7 +64,7 @@ Since QGIS is built on the Qt framework, PyQt5 is necessary for interacting with
 - CSV was selected for output due to its simplicity and wide compatibility with different software. It can easily be imported into GIS systems, spreadsheet programs, or other analytical tools.
 
 **Modularity**:
- -The project is split into two scripts:
+- The project is split into two scripts:
    `VolumeCalculator1.py` for the core volume calculation logic.
    `test.py` for testing and execution.
 - This separation allows easier maintenance and reuse of the codebase.
