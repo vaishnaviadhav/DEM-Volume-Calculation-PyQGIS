@@ -10,6 +10,7 @@ This script automates the volume calculation process for selected heaps using a 
 - Cut Volume (Material below a reference plane)
 - Fill Volume (Material above a reference plane)
 - Net Volume (Difference between cut and fill volumes)
+
 The service outputs the results to a CSV file with detailed volume data for various elevation levels within the selected area.
 
 ## Project Structure
@@ -18,6 +19,7 @@ The service outputs the results to a CSV file with detailed volume data for vari
 - `test.py`: Script to run the volume calculation and test the functionality.
 - `VolumeCalculator.py`: Whole script in one file.
 - `main.py`: Processing tool creation in QGIS.
+- `VolumeCalculations-WO-QGIS.ipynb`: Volume calculation without QGIS API.
 - `README.md`: This file.
 
 ## Prerequisites
