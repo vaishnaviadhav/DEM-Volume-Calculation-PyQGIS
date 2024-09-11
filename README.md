@@ -12,11 +12,6 @@ This script automates the volume calculation process for selected heaps using a 
 - Net Volume (Difference between cut and fill volumes)
 The service outputs the results to a CSV file with detailed volume data for various elevation levels within the selected area.
 
-Cut Volume (Material below a reference plane)
-Fill Volume (Material above a reference plane)
-Net Volume (Difference between cut and fill volumes)
-The service outputs the results to a CSV file with detailed volume data for various elevation levels within the selected area.
-
 ## Project Structure
 
 - `VolumeCalculator1.py`: Contains the logic for calculating volumes from a DEM using a shapefile mask.
@@ -58,28 +53,28 @@ The service outputs the results to a CSV file with detailed volume data for vari
    python test.py
 
 ## Reasoning Behind Technical Choices
-**QGIS & GDAL**
-The combination of QGIS and GDAL was chosen because:
+**QGIS & GDAL**:
+- The combination of QGIS and GDAL was chosen because:
 QGIS provides an extensive set of geospatial processing tools that are highly flexible and customizable for handling complex spatial data such as DEMs.
 GDAL is a powerful library for geospatial data manipulation, particularly useful for raster operations like clipping and volume calculations.
-**PyQt5**
+- **PyQt5**:
 Since QGIS is built on the Qt framework, PyQt5 is necessary for interacting with QGIS's API and ensures that the script can manage data layers and other elements seamlessly.
 
-**CSV for Output**
-CSV was selected for output due to its simplicity and wide compatibility with different software. It can easily be imported into GIS systems, spreadsheet programs, or other analytical tools.
+**CSV for Output**:
+- CSV was selected for output due to its simplicity and wide compatibility with different software. It can easily be imported into GIS systems, spreadsheet programs, or other analytical tools.
 
-**Modularity**
-The project is split into two scripts:
-`VolumeCalculator1.py` for the core volume calculation logic.
-`test.py` for testing and execution.
-This separation allows easier maintenance and reuse of the codebase.
+**Modularity**:
+ -The project is split into two scripts:
+   `VolumeCalculator1.py` for the core volume calculation logic.
+   `test.py` for testing and execution.
+- This separation allows easier maintenance and reuse of the codebase.
 
 ## Trade-offs and Future Considerations
-**Trade-offs**
-Performance vs. Precision: The current volume calculations use a 10% increment of the total elevation range. This is a balance between computational speed and precision. Finer increments could increase the precision of the volume results but would result in longer processing times.
-Data Type Handling: To handle large datasets, the system uses floating-point operations, which might introduce some minor rounding errors in very large or small numbers. However, these errors are negligible for most practical applications.
+**Trade-offs**:
+- Performance vs. Precision: The current volume calculations use a 10% increment of the total elevation range. This is a balance between computational speed and precision. Finer increments could increase the precision of the volume results but would result in longer processing times.
+- Data Type Handling: To handle large datasets, the system uses floating-point operations, which might introduce some minor rounding errors in very large or small numbers. However, these errors are negligible for most practical applications.
 
-**Future Enhancements**
-Multi-threading: The current implementation is single-threaded, which may slow down for large DEMs. Implementing multi-threading would improve performance for high-resolution datasets.
-UI Integration: A potential improvement could be integrating the script into a QGIS Plugin with a graphical user interface (GUI), allowing users to interact with the service more intuitively.
-Additional Outputs: Adding support for more output formats (e.g., GeoJSON, shapefiles) could extend the service's usability.
+**Future Enhancements**:
+- Multi-threading: The current implementation is single-threaded, which may slow down for large DEMs. Implementing multi-threading would improve performance for high-resolution datasets.
+- UI Integration: A potential improvement could be integrating the script into a QGIS Plugin with a graphical user interface (GUI), allowing users to interact with the service more intuitively.
+- Additional Outputs: Adding support for more output formats (e.g., GeoJSON, shapefiles) could extend the service's usability.
